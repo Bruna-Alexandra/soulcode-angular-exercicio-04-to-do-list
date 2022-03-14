@@ -1,0 +1,16 @@
+.app{
+    width: 400px;
+    height: 447px;
+    border: 1px rgba(75, 75, 75, 0.432) solid;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+
+}
+
+h2{
+    font-family: 'Poppins', sans-serif;
+}

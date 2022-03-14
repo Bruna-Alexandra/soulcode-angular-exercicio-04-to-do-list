@@ -1,0 +1,74 @@
+/* add item css */
+.add-item{
+    display: flex;
+    align-items: center;
+}
+input{
+/*     width: 293px; */
+    /* width: 280px; */
+    width: 295px;
+    height: 43px;
+    border-radius: 3px 3px 3px 3px;
+    border: 1px rgba(128, 128, 128, 0.433) solid;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 5px;
+    margin-right: 6px;
+}
+
+::placeholder{
+    font-size: 20px;
+    padding: 12px;
+}
+
+mat-icon{
+    font-size: 32px;
+    font-weight: bold;
+    background-color: #904ae7;
+    color: white;
+    border-radius: 0px 3px 3px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 47px;
+    height: 46px;
+    
+}
+
+.add-item mat-icon {
+}
+
+button{
+    width: 50px;
+    height: 45px;
+    cursor: pointer;
+}
+/* ========================================================================== */
+/* list css */
+.mat-list-base .mat-list-item{
+    font-family: 'Poppins', sans-serif;
+    background-color: #f2f2f2;
+    height: 46px;
+    margin-bottom: 6px;
+}
+
+.item{
+    display: flex;
+
+}
+
+.item mat-icon{
+    background-color: #e94b3f;
+    color: white;
+    border-radius: 0px 3px 3px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    width: 47px;
+    height: 46px;
+    font-family: 'Material Icons';
+}
+/* ========================================================================== */
+.list{
+    height: 265px;
+}

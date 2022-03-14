@@ -1,0 +1,26 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+button{
+    width: 82px;
+    height: 36px;
+    color: white;
+    background-color: #904ae7;
+    border-radius: 4px;
+    font-size: 15px;
+    border: 1px white solid;
+    cursor: pointer;
+    
+
+}
+
+.clearall{
+/*     border: 1px solid blue; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 330px;
+    padding-top: 15px;
+    padding-left: 4px;
+
+}
