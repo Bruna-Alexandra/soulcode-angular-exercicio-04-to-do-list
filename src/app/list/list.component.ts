@@ -39,8 +39,8 @@ export class ListComponent implements OnInit {
       this.openSnackBar("Maximum of 20 characters.", 'Ok');
 
     }
-    else if (item.length < 3) {
-      this.openSnackBar("Minimum of 3 characters.", 'Ok');
+    else if (item.length < 4) {
+      this.openSnackBar("Minimum of 4 characters.", 'Ok');
     }
     else {
 /*       this.items.unshift(item); */
