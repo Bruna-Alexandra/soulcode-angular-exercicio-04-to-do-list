@@ -56,7 +56,7 @@ button{
 }
 
 .item mat-icon{
-    background-color: #e94b3f;
+    background-color: #d3389a;
     color: white;
     border-radius: 0px 3px 3px 0px;
     display: flex;
@@ -80,7 +80,7 @@ button{
     width: 82px;
     height: 36px;
     color: white;
-    background-color: #904ae7;
+    background-color: #f1127af3;
     border-radius: 4px;
     font-size: 15px;
     border: 1px white solid;
@@ -89,5 +89,6 @@ button{
 
 }
 .btnclearall:hover {
-    background-color: #8243d0;
+    background-color: #f01e80f3;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
