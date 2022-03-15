@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output, NgModule, ViewChild, ElementRef} from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'list',
@@ -17,7 +18,7 @@ export class ListComponent implements OnInit {
   ipt!: ElementRef
 
 
-  constructor() { }
+  constructor(private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     if (this.count != "1"){
@@ -31,15 +32,15 @@ export class ListComponent implements OnInit {
   }
   addItem(item: string): void | string {
     if (this.items.length == 10){
-      alert('Your list is full, delete an item first.')
+      this.openSnackBar('Your list is full, delete an item first.', 'Ok')
     }
 
     else if (item.length > 20) {
-      alert("Maximum of 20 characters.");
+      this.openSnackBar("Maximum of 20 characters.", 'Ok');
 
     }
     else if (item.length < 3) {
-      alert("Minimum of 3 characters.");
+      this.openSnackBar("Minimum of 3 characters.", 'Ok');
     }
     else {
 /*       this.items.unshift(item); */
@@ -59,6 +60,10 @@ export class ListComponent implements OnInit {
     
     this.items.splice(0, deletions-5)
     localStorage.setItem('list', JSON.stringify(this.items))
+  }
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action);
   }
 }
 
