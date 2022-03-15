@@ -34,8 +34,8 @@ export class ListComponent implements OnInit {
       alert('Your list is full, delete an item first.')
     }
 
-    else if (item.length > 30) {
-      alert("Maximum of 30 characters.");
+    else if (item.length > 20) {
+      alert("Maximum of 20 characters.");
 
     }
     else if (item.length < 3) {
