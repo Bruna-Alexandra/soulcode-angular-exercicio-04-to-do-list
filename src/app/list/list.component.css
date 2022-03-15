@@ -85,7 +85,9 @@ button{
     font-size: 15px;
     border: 1px white solid;
     cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    
+    font-family: 'Poppins', sans-serif;    
 
+}
+.btnclearall:hover {
+    background-color: #8243d0;
 }
