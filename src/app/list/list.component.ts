@@ -20,12 +20,6 @@ export class ListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    /* localStorage.setItem('list', JSON.stringify(this.items)) */
-    console.log(this.count)
-    console.log(this.count == "1")
-
-    console.log(this.items)
-    console.log(this.getItems)
     if (this.count != "1"){
       localStorage.setItem('list', JSON.stringify(this.items))
       localStorage.setItem('count', '1')
@@ -33,8 +27,6 @@ export class ListComponent implements OnInit {
     else{
       this.items = this.getItems
     }
-    console.log(this.items)
-    console.log(this.getItems)
 
   }
   addItem(item: string): void | string {
