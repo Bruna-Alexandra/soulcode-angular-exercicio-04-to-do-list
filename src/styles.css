@@ -11,6 +11,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: radial-gradient(rgba(0, 123, 255, 0.432), rgba(29, 23, 143, 0.623));
+    background-image: url(https://images.unsplash.com/photo-1557682250-33bd709cbe85?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Ymx1ZSUyMGFuZCUyMHB1cnBsZSUyMGdyYWRpZW50fGVufDB8fDB8fA%3D%3D&w=1000&q=80);
+    background-size: cover;
     font-family: 'Poppins', sans-serif;
 }
