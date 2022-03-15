@@ -6,7 +6,7 @@ import { Component, EventEmitter, OnInit, Output, NgModule, ViewChild, ElementRe
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  items: string[] = ['1', '2', '3', '4']
+  items: string[] = ['1', '2', '3', '4', '5']
   task: string = ''
   itemsStr: string = ''
   getItems: any = JSON.parse(localStorage.getItem('list') || '{}')
@@ -22,7 +22,10 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
     /* localStorage.setItem('list', JSON.stringify(this.items)) */
     console.log(this.count)
-    console.log(this.count != "1")
+    console.log(this.count == "1")
+
+    console.log(this.items)
+    console.log(this.getItems)
     if (this.count != "1"){
       localStorage.setItem('list', JSON.stringify(this.items))
       localStorage.setItem('count', '1')
@@ -30,17 +33,12 @@ export class ListComponent implements OnInit {
     else{
       this.items = this.getItems
     }
-
     console.log(this.items)
-    console.log(typeof(this.getItems))
-    console.log("getItems "+ this.getItems)
-  }
-  alert(): void {
-    alert("Ola")
-  }
+    console.log(this.getItems)
 
+  }
   addItem(item: string): void | string {
-    if (this.items.length == 8){
+    if (this.items.length == 10){
       alert('Your list is full, delete an item first.')
     }
 
@@ -54,27 +52,21 @@ export class ListComponent implements OnInit {
     else {
 /*       this.items.unshift(item); */
       this.ipt.nativeElement.value = ""
-      if (this.count == "0"){
-        this.items.unshift(item);
-        localStorage.setItem('list', JSON.stringify(this.items))
-      }
-      else{
         this.items = this.getItems
         this.items.unshift(item)
         localStorage.setItem('list', JSON.stringify(this.items))
-      }
-  
-
-      /*  var getItems: any = JSON.parse(localStorage.getItem('list') || '{}'); */
-      /* if  */
-
     }}
   
 
   removeItem(index: number): void {
     this.items.splice(index, 1)
     localStorage.setItem('list', JSON.stringify(this.items))
-    console.log('items list:' + this.items)
+  }
+
+  clearAll(deletions: number): void{
+    
+    this.items.splice(0, deletions-5)
+    localStorage.setItem('list', JSON.stringify(this.items))
   }
 }
 

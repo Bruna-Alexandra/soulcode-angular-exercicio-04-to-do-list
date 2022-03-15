@@ -13,11 +13,12 @@ input{
     font-family: 'Poppins', sans-serif;
     padding-top: 5px;
     margin-right: 6px;
+    font-size: 20px;
+    padding-left: 15px;
 }
 
 ::placeholder{
     font-size: 20px;
-    padding: 12px;
 }
 
 mat-icon{
@@ -25,7 +26,7 @@ mat-icon{
     font-weight: bold;
     background-color: #904ae7;
     color: white;
-    border-radius: 0px 3px 3px 0px;
+    border-radius: 3px 3px 3px 3px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,5 +71,23 @@ button{
 }
 /* ========================================================================== */
 .list{
-    height: 265px;
+    height: 315px;
+}
+/* ========================================================================== */
+/* Clear All */
+*{
+    /* font-family: 'Poppins', sans-serif; */
+}
+.btnclearall{
+    width: 82px;
+    height: 36px;
+    color: white;
+    background-color: #904ae7;
+    border-radius: 4px;
+    font-size: 15px;
+    border: 1px white solid;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    
+
 }

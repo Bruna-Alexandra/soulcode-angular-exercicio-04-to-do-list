@@ -11,6 +11,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: radial-gradient(rgba(0, 153, 255, 0.507), rgba(23, 143, 117, 0.384));
+    background-image: radial-gradient(rgba(0, 123, 255, 0.432), rgba(29, 23, 143, 0.623));
     font-family: 'Poppins', sans-serif;
 }

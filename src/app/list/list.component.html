@@ -8,37 +8,44 @@
     <!-- ------------------------------------------------------------------------------- -->
     <mat-list>
         <div class="item" *ngIf="getItems[0].length > 3">
-            <mat-list-item> {{items[0]}}
+            <mat-list-item> {{getItems[0]}}
             </mat-list-item><button mat-icon-button (click)="removeItem(0)">
                 <mat-icon>delete</mat-icon>
             </button>
         </div>
         <!-- ------------------------------------------------------------------------------- -->
         <div class="item" *ngIf="getItems[1].length> 3">
-            <mat-list-item> {{items[1]}} </mat-list-item>
+            <mat-list-item> {{getItems[1]}} </mat-list-item>
             <button mat-icon-button (click)="removeItem(1)">
                 <mat-icon>delete</mat-icon>
             </button>
         </div>
         <!-- ------------------------------------------------------------------------------- -->
         <div class="item" *ngIf="getItems[2].length > 3">
-            <mat-list-item> {{items[2]}} </mat-list-item>
+            <mat-list-item> {{getItems[2]}} </mat-list-item>
             <button mat-icon-button (click)="removeItem(2)">
                 <mat-icon>delete</mat-icon>
             </button>
         </div>
         <!-- ------------------------------------------------------------------------------- -->
         <div class="item" *ngIf="getItems[3].length > 3">
-            <mat-list-item> {{items[3]}} </mat-list-item>
+            <mat-list-item> {{getItems[3]}} </mat-list-item>
             <button mat-icon-button (click)="removeItem(3)">
                 <mat-icon>delete</mat-icon>
             </button>
         </div>
+                <!-- ------------------------------------------------------------------------------- -->
+        <div class="item" *ngIf="getItems[4].length > 3">
+            <mat-list-item> {{getItems[4]}} </mat-list-item>
+            <button mat-icon-button (click)="removeItem(2)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
+        <!-- ------------------------------------------------------------------------------- -->
     </mat-list>
-    <!-- ------------------------------------------------------------------------------- -->
-    <!--     <mat-form-field appearance="fill">
-      <mat-label>Digite um aluno</mat-label>
-      <input matInput placeholder="ex.: Bruna" #inputAluno (keyup.enter)="add(inputAluno.value)">
-    </mat-form-field> -->
-    <!-- <button mat-raised-button color="primary" (click)="add(inputAluno.value)">Adicionar</button> -->
 </div>
+    <!-- ------------------------------------------------------------------------------- -->
+    <div BtnClearAll clearAllDiv>
+        <p>You have {{getItems.length-5}} pending tasks</p> 
+        <button class = "btnclearall" (click)="clearAll(getItems.length)">Clear All</button>
+    </div>

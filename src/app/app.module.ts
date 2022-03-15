@@ -7,13 +7,14 @@ import { MaterialModule } from './material.module';
 import { ListComponent } from './list/list.component';
 import { ClearAllComponent } from './clear-all/clear-all.component';
 import { FormsModule } from '@angular/forms';
+import { BtnClearallDirective } from './btn-clearall.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
-    ClearAllComponent,
-  ],
+    BtnClearallDirective,
+  ],  
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
