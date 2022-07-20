@@ -7,35 +7,40 @@
     </div>
     <!-- ------------------------------------------------------------------------------- -->
     <mat-list>
-        <div class="item" *ngIf="getItems[0].length >= 4">
-            <mat-list-item> {{getItems[0]}}
-            </mat-list-item><button mat-icon-button (click)="removeItem(0)">
+        <div class="item" id="item0" *ngIf="items[0].length >= 4">
+            <mat-list-item *ngIf="edit == 0"> {{getItems[1]}} </mat-list-item>
+            <button class="editBtn" id="editBtn0" mat-icon-button (click)="editBool()">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button (click)="removeItem(1)">
                 <mat-icon>clear</mat-icon>
             </button>
+            <input type="text" *ngIf="edit == 1" [placeholder]="getItems[0]">
+
         </div>
         <!-- ------------------------------------------------------------------------------- -->
-        <div class="item" *ngIf="getItems[1].length >= 4">
+        <div class="item" *ngIf="items[1].length >= 4">
             <mat-list-item> {{getItems[1]}} </mat-list-item>
             <button mat-icon-button (click)="removeItem(1)">
                 <mat-icon>clear</mat-icon>
             </button>
         </div>
         <!-- ------------------------------------------------------------------------------- -->
-        <div class="item" *ngIf="getItems[2].length >= 4">
+        <div class="item" *ngIf="items[2].length >= 4">
             <mat-list-item> {{getItems[2]}} </mat-list-item>
             <button mat-icon-button (click)="removeItem(2)">
                 <mat-icon>clear</mat-icon>
             </button>
         </div>
         <!-- ------------------------------------------------------------------------------- -->
-        <div class="item" *ngIf="getItems[3].length >= 4">
+        <div class="item" *ngIf="items[3].length >= 4">
             <mat-list-item> {{getItems[3]}} </mat-list-item>
             <button mat-icon-button (click)="removeItem(3)">
                 <mat-icon>clear</mat-icon>
             </button>
         </div>
                 <!-- ------------------------------------------------------------------------------- -->
-        <div class="item" *ngIf="getItems[4].length >= 4">
+        <div class="item" *ngIf="items[4].length >= 4">
             <mat-list-item> {{getItems[4]}} </mat-list-item>
             <button mat-icon-button (click)="removeItem(2)">
                 <mat-icon>clear</mat-icon>

@@ -12,6 +12,7 @@ export class ListComponent implements OnInit {
   itemsStr: string = ''
   getItems: any = JSON.parse(localStorage.getItem('list') || '{}')
   count: any = (localStorage.getItem('count'))
+  edit: number = 0
 
   /* ------------------------------------------------------------- */
   @ViewChild('inputItem')
@@ -21,7 +22,13 @@ export class ListComponent implements OnInit {
   constructor(private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.items = this.getItems
+      if (this.count == '0'){
+      this.getItems = this.items;
+      localStorage.setItem('count', '1')
+    }
+    else{
+      this.items = this.getItems
+    }
   }
   addItem(item: string): void | string {
     if (this.items.length == 10) {
@@ -41,6 +48,14 @@ export class ListComponent implements OnInit {
       this.items.unshift(item)
       localStorage.setItem('list', JSON.stringify(this.items))
     }
+  }
+
+  editBool(){
+    this.edit = 1
+  }
+  editItem(item: string): void | string {
+    this.edit = 0
+    
   }
 
 
