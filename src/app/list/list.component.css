@@ -33,9 +33,6 @@ mat-icon{
     
 }
 
-.add-item mat-icon {
-}
-
 button{
     width: 50px;
     height: 45px;
@@ -96,7 +93,7 @@ button{
 /* edit button /*
 /* ========================================================================== */
 
-.editBtn {
+/* .editBtn {
     
 }
 .editBtn:hover{
@@ -105,11 +102,15 @@ button{
 
 .item:hover + .editBtn { 
     background-color: yellow; }
-
+ */
 /* .item {
     background-color:;
 } */
-#item0:hover > #editBtn0{
+/* #item0:hover > #editBtn0{
     opacity: 1;
-}
+} */
 
+p{
+    color: white;
+    font-size: 70%;
+}
