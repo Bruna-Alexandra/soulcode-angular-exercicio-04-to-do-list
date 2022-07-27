@@ -12,7 +12,7 @@ export class ListComponent implements OnInit {
   itemsStr: string = ''
   getItems: any = JSON.parse(localStorage.getItem('list') || '{}')
   count: any = (localStorage.getItem('count'))
- /*  edit: number = 0 */
+  checkbox: boolean = false
 
   /* ------------------------------------------------------------- */
   @ViewChild('inputItem')
@@ -70,6 +70,7 @@ export class ListComponent implements OnInit {
   removeItem(index: number): void {
     this.items.splice(index, 1)
     localStorage.setItem('list', JSON.stringify(this.items))
+    window['checkbox' + String(number)] = false;
   }
 
   clearAll(deletions: number): void {
@@ -80,6 +81,15 @@ export class ListComponent implements OnInit {
 
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action);
+  }
+
+  check(): void {
+    if (this.checkbox == true){
+      this.checkbox = false
+    }
+    else{
+      this.checkbox = true
+    }
   }
 }
 

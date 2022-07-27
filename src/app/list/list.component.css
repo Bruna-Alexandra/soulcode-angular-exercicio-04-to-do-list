@@ -53,8 +53,8 @@ button{
 }
 
 .item mat-icon{
-    background-color: #d3389a;
-    color: white;
+    background-color: #F2F2F2;
+    color: #d3389a;
     border-radius: 0px 3px 3px 0px;
     display: flex;
     justify-content: center;
@@ -112,5 +112,7 @@ button{
 
 p{
     color: white;
+    color: black;
     font-size: 70%;
 }
+

@@ -7,14 +7,22 @@
     </div>
     <!-- ------------------------------------------------------------------------------- -->
     <mat-list>
-        <div class="item" *ngIf="getItems[0].length >= 4">
-            <mat-list-item> {{getItems[0]}}
-            </mat-list-item><button mat-icon-button (click)="removeItem(0)">
+        <div *ngIf="getItems[0].length >= 4">
+            <div class="item">
+            <button mat-icon-button (click)="check()">
+                <mat-icon *ngIf="checkbox1!=true">check_box_outline_blank</mat-icon>
+                <mat-icon *ngIf="checkbox1==true">check_box</mat-icon>
+            </button>
+            <mat-list-item style="text-decoration: line-through;" *ngIf="checkbox1==true"> {{getItems[0]}}</mat-list-item>
+            <mat-list-item *ngIf="checkbox!= true"> {{getItems[0]}} </mat-list-item>
+            <button mat-icon-button (click)="removeItem(0)">
                 <mat-icon>clear</mat-icon>
             </button>
+            </div>
         </div>
+
         <!-- ------------------------------------------------------------------------------- -->
-        <div class="item" *ngIf="getItems[1].length >= 4">
+        <div class="item" *ngIf="getItems[1].length >= 4">  
             <mat-list-item> {{getItems[1]}} </mat-list-item>
             <button mat-icon-button (click)="removeItem(1)">
                 <mat-icon>clear</mat-icon>
