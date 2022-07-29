@@ -1,23 +1,23 @@
 import { Component, EventEmitter, OnInit, Output, NgModule, ViewChild, ElementRef } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import { merge, of } from 'rxjs';
+import { startWith, switchMap } from 'rxjs/operators';
 @Component({
   selector: 'list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  items: string[] = ['1', '2', '3', '4', '5']
+  items: string[] = []
   task: string = ''
   itemsStr: string = ''
   getItems: any = JSON.parse(localStorage.getItem('list') || '{}')
   count: any = (localStorage.getItem('count'))
-  checkbox: boolean = false
 
   /* ------------------------------------------------------------- */
   @ViewChild('inputItem')
   ipt!: ElementRef
-
 
   constructor(private _snackBar: MatSnackBar) { }
 
@@ -26,13 +26,13 @@ export class ListComponent implements OnInit {
   }
 
   iniciar(): void {
-    if (localStorage.getItem('count') != '1'){
+    if (localStorage.getItem('count') != '1') {
       this.getItems = this.items;
       localStorage.setItem('count', '1')
       localStorage.setItem('list', JSON.stringify(this.items))
       console.log(1)
     }
-    else{
+    else {
       this.items = this.getItems
       console.log(2)
     }
@@ -51,31 +51,21 @@ export class ListComponent implements OnInit {
       this.openSnackBar("Minimum of 4 characters.", 'Ok');
     }
     else {
+      item = item + '0'
       this.ipt.nativeElement.value = ""
       this.items = this.getItems
       this.items.unshift(item)
       localStorage.setItem('list', JSON.stringify(this.items))
     }
   }
-
-/*   editBool(){
-    this.edit = 1
-  }
-  editItem(item: string): void | string {
-    this.edit = 0
-    
-  } */
-
-
   removeItem(index: number): void {
     this.items.splice(index, 1)
     localStorage.setItem('list', JSON.stringify(this.items))
-    window['checkbox' + String(number)] = false;
   }
 
-  clearAll(deletions: number): void {
+  clearAll(): void {
 
-    this.items.splice(0, deletions - 5)
+    this.items.splice(0, this.items.length)
     localStorage.setItem('list', JSON.stringify(this.items))
   }
 
@@ -83,13 +73,19 @@ export class ListComponent implements OnInit {
     this._snackBar.open(message, action);
   }
 
-  check(): void {
-    if (this.checkbox == true){
-      this.checkbox = false
-    }
-    else{
-      this.checkbox = true
+  check(index : number): void {
+    var item : string = this.getItems[index]
+    
+    if (item.charAt(item.length - 1) == "1"){
+    item = item.slice(0, -1) + "0"
+    this.items.splice(index, 1, item)
+    localStorage.setItem('list', JSON.stringify(this.items))
+    }else{
+      item = item.slice(0, -1) + "1"
+      this.items.splice(index, 1, item)
+      localStorage.setItem('list', JSON.stringify(this.items))
     }
   }
 }
+
 

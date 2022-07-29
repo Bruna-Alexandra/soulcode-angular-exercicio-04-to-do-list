@@ -20,6 +20,7 @@ import { BtnClearallDirective } from './btn-clearall.directive';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule
+
   ],
   providers: [ClearAllComponent, ListComponent],
   bootstrap: [AppComponent]
