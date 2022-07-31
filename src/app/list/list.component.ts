@@ -7,6 +7,7 @@ import { startWith, switchMap } from 'rxjs/operators';
   selector: 'list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
+  
 })
 export class ListComponent implements OnInit {
   items: string[] = []
@@ -14,6 +15,7 @@ export class ListComponent implements OnInit {
   itemsStr: string = ''
   getItems: any = JSON.parse(localStorage.getItem('list') || '{}')
   count: any = (localStorage.getItem('count'))
+  edit: boolean = false
 
   /* ------------------------------------------------------------- */
   @ViewChild('inputItem')
@@ -39,7 +41,7 @@ export class ListComponent implements OnInit {
   }
 
   addItem(item: string): void | string {
-    if (this.items.length == 10) {
+    if (this.items.length == 5) {
       this.openSnackBar('Your list is full, delete an item first.', 'Ok')
     }
 
@@ -57,6 +59,10 @@ export class ListComponent implements OnInit {
       this.items.unshift(item)
       localStorage.setItem('list', JSON.stringify(this.items))
     }
+  }
+  editClick(index:number){
+    this.edit = true;
+
   }
   removeItem(index: number): void {
     this.items.splice(index, 1)

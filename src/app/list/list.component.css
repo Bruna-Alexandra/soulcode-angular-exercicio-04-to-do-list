@@ -4,7 +4,7 @@
     align-items: center;
     margin-bottom: 5px;
 }
-input{
+.addInput{
     min-width: 295px;
     height: 43px;
     border-radius: 3px 3px 3px 3px;
@@ -14,6 +14,13 @@ input{
     margin-right: 6px;
     font-size: 20px;
     padding-left: 15px;
+    border-radius: 5px;
+    box-shadow:  5px 5px 5px #bebebe,
+                0px 0px 5px #ffffff;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133)) !important;
+}
+input:focus-visible{
+    outline: rgba(107, 106, 106, 0.433) 2px; 
 
 }
 
@@ -26,12 +33,13 @@ mat-icon{
     font-weight: bold;
     background-color: #904ae7;
     color: white;
-    border-radius: 3px 3px 3px 3px;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 47px;
     height: 46px;
+    
     
 }
 
@@ -45,17 +53,47 @@ button{
 .mat-list-base .mat-list-item{
     font-family: 'Poppins', sans-serif;
     background-color: #f2f2f2;
+    background-color: white;
     height: 46px;
     margin-bottom: 6px;
+    text-align: initial;
+}
+.mat-list-item-content{
+    padding: 0 !important;
+}
+span{
+    padding: 0 !important;
 }
 
 .item{
     display: flex;
-
+    align-items: center;
+    width: 100%;
+    box-shadow:  0px 5px 5px #bebebe,
+                0px 0px 5px #ffffff;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    
 }
 
+.task{
+    width: 95%;
+}
+.taskinput{
+    border: none; 
+    background: transparent; 
+    outline: 0;
+}
+
+:host ::ng-deep .mat-list-item-content {
+     padding: 0 !important; }
+
 .item mat-icon{
-    background-color: #F2F2F2;
+    background-color: #f2f2f2;
+    background-color: white;
     color: #d3389a;
     border-radius: 0px 3px 3px 0px;
     display: flex;
@@ -72,9 +110,7 @@ button{
 }
 /* ========================================================================== */
 /* Clear All */
-*{
-    /* font-family: 'Poppins', sans-serif; */
-}
+ 
 .btnclearall{
     width: 82px;
     height: 36px;
@@ -85,38 +121,44 @@ button{
     border: 1px white solid;
     cursor: pointer;
     font-family: 'Poppins', sans-serif;    
+    border-radius: 5px;
+    box-shadow:  5px 5px 5px #bebebe,
+             0px 0px 5px #ffffff;
+    
 
 }
 .btnclearall:hover {
     background-color: #f01e80f3;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #bebebe,
+            0px 0px 5px #ffffff,
+            rgba(255, 255, 255, 0.25) 0px 30px 60px -12px inset, rgba(255, 255, 255, 0.3) 0px 18px 36px -18px inset;
 }
 /* ========================================================================== */
 /* edit button /*
 /* ========================================================================== */
-
-/* .editBtn {
     
-}
-.editBtn:hover{
-    opacity: 1;
+.addIcon {
+        border-radius: 5px;
+        box-shadow:  5px 5px 5px #bebebe,
+                0px 0px 5px #ffffff;
 }
 
-.item:hover + .editBtn { 
-    background-color: yellow; }
- */
-/* .item {
-    background-color:;
-} */
-/* #item0:hover > #editBtn0{
-    opacity: 1;
-} */
+.addIcon:hover {
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #bebebe,
+            0px 0px 5px #ffffff,
+            rgba(255, 255, 255, 0.176) 0px 30px 60px -12px inset, rgba(255, 255, 255, 0.176) 0px 18px 36px -18px inset;
 
-p{
+}
+
+/* ========================================================================== */
+#clearAll{
     color: white;
     color: black;
     font-size: 70%;
 }
+ 
 
 .mat-list-base{
     padding-top: 0;

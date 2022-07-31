@@ -1,36 +1,33 @@
 <div class="list">
     <div class="add-item">
-        <input #inputItem placeholder="Add a new task" (keyup.enter)="addItem(inputItem.value)">
-        <button (click)="addItem(inputItem.value)" mat-icon-button>
-            <mat-icon>add</mat-icon>
+        <input class="addInput" #inputItem placeholder="Add a new task" (keyup.enter)="addItem(inputItem.value)">
+        <button class="addItem" (click)="addItem(inputItem.value)" mat-icon-button>
+            <mat-icon class="addIcon">add</mat-icon>
         </button>
     </div>
     <!-- ------------------------------------------------------------------------------- -->
     <mat-list>
-        <div *ngFor="let item of items; index as i">
-            <div class="item" *ngIf="getItems[i] != undefined">
-                <button mat-icon-button (click)="check(i)">
+        <mat-list-item class="flex item" *ngFor="let item of items; index as i">
+                 <button mat-icon-button (click)="check(i)">
                     <mat-icon *ngIf="getItems[i].charAt(getItems[i].length -1) == '0'; 
                 else box">check_box_outline_blank</mat-icon>
                     <ng-template #box>
                         <mat-icon>check_box</mat-icon>
                     </ng-template>
                 </button>
-                <mat-list-item style="text-decoration: line-through;"
-                    *ngIf="getItems[i].charAt(getItems[i].length -1) == '1'; else unchecked">
-                    {{getItems[i].slice(0, -1)}}</mat-list-item>
-                <ng-template #unchecked>
-                <mat-list-item > {{getItems[i].slice(0, -1)}} </mat-list-item>
-                </ng-template>
-                <button mat-icon-button (click)="removeItem(i)">
+                <div class="task" style="text-decoration: line-through;"
+                    *ngIf="getItems[i].charAt(getItems[i].length -1) == '1' and edit==false">
+                    {{getItems[i].slice(0, -1)}}</div>
+                <div *ngIf="getItems[i].charAt(getItems[i].length -1) == '0' and edit==false" class="task">
+                    {{getItems[i].slice(0, -1)}}</div>
+                <button mat-icon-button (click)="removeItem(i)" >
                     <mat-icon>clear</mat-icon>
                 </button>
-            </div>
-        </div>
+        </mat-list-item>
     </mat-list>
 </div>
 <!-- ------------------------------------------------------------------------------- -->
 <div BtnClearAll clearAllDiv>
-    <p>You have {{items.length}} pending tasks</p>
-    <button class="btnclearall" (click)="clearAll()">Clear All</button>
+    <p id="clearAll">You have {{items.length}} pending tasks</p>
+    <button class="btnclearall" (click)="clearAll()" *ngIf="items.length != 0">Clear All</button>
 </div>
